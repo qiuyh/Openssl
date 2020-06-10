@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Openssl'
-  s.version          = '0.0.1'
+  s.name             = 'QYHOpenssl'
+  s.version          = '0.0.2'
   s.summary          = 'Openssl加密'
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Openssl加密'
+  s.description      = 'Openssl加密, pod'
 
   s.homepage         = 'https://github.com/qiuyh/Openssl'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -28,7 +28,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Openssl/Classes/**/*.{h,m}'
+  s.subspec 'Classes' do |classes|
+    classes.source_files = 'Openssl/Classes/**/*.{h,m}'
+  end
   s.requires_arc = true
   s.static_framework = true
   
