@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QYHOpenssl'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Openssl加密'
 
 # This description is used to generate tags and improve search results.
@@ -29,21 +29,23 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.subspec 'Classes' do |classes|
-    classes.source_files = 'Openssl/Classes/**/*.{h,m}'
+    classes.source_files = 'QYHOpenssl/Classes/**/*.{h,m}'
   end
+  
   s.requires_arc = true
   s.static_framework = true
   
-  s.ios.vendored_libraries = "Openssl/Classes/Openssl/Lib/libcrypto.a","Openssl/Classes/Openssl/Lib/libssl.a"
+  s.ios.vendored_libraries = "QYHOpenssl/Classes/Openssl/Lib/libcrypto.a","QYHOpenssl/Classes/Openssl/Lib/libssl.a"
   #spec.public_header_files = "ConnectionLib/Classes/BLE/ESPBlufi/Openssl/Include/**/*.h"
 
-  #spec.pod_target_xcconfig = {"HEADER_SEARCH_PATHS" => "$(SRCROOT)/../../ConnectionLib/Classes/BLE/ESPBlufi/ESPBlufi/Openssl/include"}
+#  s.pod_target_xcconfig = {"HEADER_SEARCH_PATHS" => "$(SRCROOT)/../../QYHOpenssl/Classes/Openssl/include"}
   #spec.prefix_header_file = false
   search_paths = [
   #Podfile使用指定路径链接
-  'Openssl/Classes/Openssl/include'
+  'QYHOpenssl/Classes/Openssl/include'
   ]
   s.pod_target_xcconfig = {
+#    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
     'HEADER_SEARCH_PATHS' => search_paths.join(' '),
   }
   

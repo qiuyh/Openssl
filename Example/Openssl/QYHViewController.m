@@ -7,7 +7,7 @@
 //
 
 #import "QYHViewController.h"
-#import "openssl/dh.h"
+#import "QYHOpenssl/dh.h"
 
 @interface QYHViewController ()
 
