@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QYHOpenssl'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'Openssl加密'
 
 # This description is used to generate tags and improve search results.
@@ -47,6 +47,10 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
 #    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
     'HEADER_SEARCH_PATHS' => search_paths.join(' '),
+  }
+  
+  s.xcconfig = {
+    'VALID_ARCHS' =>  'armv7 x86_64 arm64',
   }
   
 end
